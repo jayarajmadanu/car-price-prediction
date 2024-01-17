@@ -1,0 +1,11 @@
+columns:
+  name: str
+  year: int64
+  selling_price: int64
+  km_driven: int64
+  fuel: str
+  seller_type: str
+  transmission: str
+  owner: str
+
+targer_colunm: selling_price
