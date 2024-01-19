@@ -2,7 +2,7 @@ artifacts_root: artifacts/raw_data/
 
 data_ingestion:
   source_url: https://drive.google.com/file/d/1Ud5vwGfQU6SdwYqdDROGfhWCWmEJ1rsi/view?usp=sharing
-  local_data_file_path: artifacts/raw_data/CAR DETAILS FROM CAR DEKHO.csv
+  local_data_file_path: artifacts/raw_data/CAR_DETAILS_FROM_CAR_DEKHO.csv
 
 data_validation:
   root_dir: artifacts/data_validation
@@ -24,11 +24,15 @@ model_trainer:
   root_dir: artifacts/model_trainer
   train_data_path: artifacts/data_transformation/train.csv
   test_data_path: artifacts/data_transformation/test.csv
-  model_name: model.joblib
+  model_name: model.pkl
 
 model_evaluation:
   root_dir: artifacts/model_evaluation
-  mlflow_uri: https://dbc-196b05fa-0442.cloud.databricks.com
+  mlflow_uri: https://dagshub.com/jayarajmadanu/car-price-prediction.mlflow
   test_data_path: artifacts/data_transformation/test.csv
-  model_path: artifacts/model_trainer/model.joblib
+  model_path: artifacts/model_trainer/model.pkl
+
+prediction_config:
+  model_path: artifacts/model_trainer/model.pkl
+  preprocessor_path: artifacts/data_transformation/proprocessor.pkl
 

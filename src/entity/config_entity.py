@@ -42,3 +42,8 @@ class ModelEvaluationConfig:
     test_data_path: Path
     model_path: Path
     
+@dataclass
+class PredictionConfig:
+    preprocessor_path: Path
+    model_path: Path
+    

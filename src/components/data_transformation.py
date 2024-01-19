@@ -45,7 +45,7 @@ class DataTransformation:
                 ('ordinal_encoder', OrdinalEncoder(categories=[['Test Drive Car', 'First Owner', 'Second Owner', 'Third Owner', 'Fourth & Above Owner']]),[5])
             ], remainder='passthrough')
             tr5 = ColumnTransformer([
-                ('custom_onehotencoder', CustomOneHotEncoder(colunms=['fuel', 'seller_type', 'transmission']),[3,4,5])
+                ('custom_onehotencoder', OneHotEncoder(drop='first', min_frequency=50, handle_unknown='ignore'),[3,4,5])
             ], remainder='passthrough')
             tr6 = ColumnTransformer([
                 ("scalar",StandardScaler(with_mean=False), slice(0,8))

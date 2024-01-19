@@ -1,5 +1,5 @@
 from src.constants.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
-from src.entity.config_entity import DataIngestionConfig, DataTransformationConfig, DataValidationConfig, DataTrainingConfig, ModelEvaluationConfig
+from src.entity.config_entity import DataIngestionConfig, DataTransformationConfig, DataValidationConfig, DataTrainingConfig, ModelEvaluationConfig, PredictionConfig
 from src.utils.common import create_directories, read_yaml
 
 class ConfigurationManager:
@@ -73,3 +73,11 @@ class ConfigurationManager:
         )
         return model_evaluation_config
         
+    
+    def get_prediction_config(self)-> PredictionConfig:
+        config = self.config['prediction_config']
+        prediction_config = PredictionConfig(
+            model_path=config['model_path'],
+            preprocessor_path=config['preprocessor_path']
+        )
+        return prediction_config
