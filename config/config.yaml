@@ -6,12 +6,12 @@ data_ingestion:
 
 data_validation:
   root_dir: artifacts/data_validation
-  dataset_file_path: artifacts/raw_data/CAR DETAILS FROM CAR DEKHO.csv
+  dataset_file_path: artifacts/raw_data/CAR_DETAILS_FROM_CAR_DEKHO.csv
   validation_status_file_path: artifacts/data_validation/status.txt
 
 data_transformation:
   root_dir: artifacts/data_transformation
-  dataset_file_path: artifacts/raw_data/CAR DETAILS FROM CAR DEKHO.csv
+  dataset_file_path: artifacts/raw_data/CAR_DETAILS_FROM_CAR_DEKHO.csv
   processed_dataset_file_path: artifacts/data_transformation/processed_dataset.csv
   preprocessor_obj_path: artifacts/data_transformation/proprocessor.pkl
   dataset_summary_path: artifacts/data_transformation/dataset_summary.txt
